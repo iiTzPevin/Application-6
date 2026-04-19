@@ -4,15 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application 6 - Your Project Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* ── Header ── */
+        header {
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+            border-bottom: 3px solid #f5c400;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #f5c400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(245, 196, 0, 0.4);
+        }
+
+        header p.tagline {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #aaaaaa;
+            letter-spacing: 1px;
+        }
+
+        /* ── Main layout ── */
+        main {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        /* ── Section titles ── */
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #f5c400;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, #f5c400, transparent);
+        }
+
+        /* ── Description card ── */
+        .description-card {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-left: 4px solid #f5c400;
+            border-radius: 8px;
+            padding: 30px 32px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: #cccccc;
+        }
+
+        .description-card p {
+            margin-bottom: 12px;
+        }
+
+        .description-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ── Video section ── */
+        .video-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            max-width: 800px;
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-top: 4px solid #f5c400;
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 ratio */
+            border-radius: 6px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-caption {
+            font-size: 0.85rem;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #1e1e1e;
+            color: #444;
+            font-size: 0.85rem;
+        }
+
+        footer span {
+            color: #f5c400;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .description-card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Your Project Name</h1>
-    <p>A short description of your project goes here.</p>
 
-    <h2>Demo Video</h2>
-    <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-        frameborder="0" allowfullscreen>
-    </iframe>
+    <header>
+        <h1>Your Project Name</h1>
+        <p class="tagline">Application 6 &mdash; Built with purpose</p>
+    </header>
+
+    <main>
+
+        <!-- Project Description -->
+        <section>
+            <div class="section-title">Project Description</div>
+            <div class="description-card">
+                <p>
+                    Write your project description here. Explain what your project does,
+                    what problem it solves, and why it matters.
+                </p>
+                <p>
+                    You can add more paragraphs to go into further detail — technology
+                    used, key features, goals, or anything else you want visitors to know.
+                </p>
+            </div>
+        </section>
+
+        <!-- Demo Video -->
+        <section class="video-section">
+            <div class="section-title" style="width:100%; max-width:800px;">Demo Video</div>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="video-caption">Replace YOUR_VIDEO_ID in the source with your actual YouTube video ID</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; 2026 <span>Your Project Name</span>. All rights reserved.
+    </footer>
+
 </body>
 </html>
